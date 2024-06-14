@@ -16,4 +16,10 @@
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="8.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BoostlingoApp.Application\BoostlingoApp.Application.csproj" />
+    <ProjectReference Include="..\BoostlingoApp.Domain\BoostlingoApp.Domain.csproj" />
+    <ProjectReference Include="..\BoostLingoApp.Infrastructure\BoostlingoApp.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

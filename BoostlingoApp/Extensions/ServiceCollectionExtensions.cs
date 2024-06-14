@@ -1,4 +1,5 @@
 ﻿using BoostlingoApp.Application.Commands;
+using BoostlingoApp.Application.Mappers;
 using BoostlingoApp.Application.Queries;
 using BoostlingoApp.Infrastructure.Repository;
 using BoostlingoApp.Infrastructure.Services;
@@ -42,7 +43,7 @@ namespace BoostlingoApp.Extensions
                 loggerBuilder.AddFilter("BoostlingoApp", LogLevel.Debug);
                 loggerBuilder.AddConsole();
             })
-            .AddAutoMapper(typeof(Program).Assembly);
+            .AddAutoMapper(typeof(AutoMapperProfile).Assembly);
 
             return services;
         }

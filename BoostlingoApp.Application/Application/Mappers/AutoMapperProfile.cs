@@ -9,8 +9,6 @@ namespace BoostlingoApp.Application.Mappers
         public AutoMapperProfile()
         {
             CreateMap<User, UserEntity>().ReverseMap();
-            CreateMap<IEnumerable<UserEntity>, User>();
-            CreateMap<IEnumerable<UserEntity>, IEnumerable<User>>();
         }
     }
 }

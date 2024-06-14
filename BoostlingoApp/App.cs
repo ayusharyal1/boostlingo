@@ -2,11 +2,7 @@
 using BoostlingoApp.Application.Queries;
 using BoostlingoApp.Domain.Models;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace BoostlingoApp
 {
@@ -42,7 +38,6 @@ namespace BoostlingoApp
             }
 
             Console.WriteLine("Fetching data completed.");
-
         }
     }
 }
