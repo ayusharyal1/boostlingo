@@ -28,12 +28,12 @@ namespace BoostlingoApp.Extensions
 
             services.AddDbContext<BoostlingoDBContext>(
                   options => options.UseSqlServer(connectionString))
-            .AddTransient<IGetJsonDataQuery, GetJsonDataQueryHandler>()
-            .AddTransient<IJsonDataHttpGateway, JsonDataHttpGateway>()
-            .AddTransient<IInsertUsersCommand, InsertUsersCommandHandler>()
-            .AddTransient<IGetUsersSortedByNameQuery, GetUsersSortedByNameQueryHandler>()
-            .AddTransient<ITruncateUserCommand, TruncateUserCommandHandler>()
-            .AddSingleton<IUserRepository, UserRepository>()
+            .AddScoped<IGetJsonDataQuery, GetJsonDataQueryHandler>()
+            .AddScoped<IJsonDataHttpGateway, JsonDataHttpGateway>()
+            .AddScoped<IInsertUsersCommand, InsertUsersCommandHandler>()
+            .AddScoped<IGetUsersSortedByNameQuery, GetUsersSortedByNameQueryHandler>()
+            .AddScoped<ITruncateUserCommand, TruncateUserCommandHandler>()
+            .AddScoped<IUserRepository, UserRepository>()
             .AddLogging(loggerBuilder =>
             {
                 loggerBuilder.ClearProviders();
