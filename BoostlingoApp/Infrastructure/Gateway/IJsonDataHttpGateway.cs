@@ -1,13 +1,8 @@
 ﻿using BoostlingoApp.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace BoostlingoApp.Infrastructure
+namespace BoostlingoApp.Infrastructure.Services
 {
-    public interface IJsonDataService
+    public interface IJsonDataHttpGateway
     {
         /// <summary>
         /// Method to fetch json data and parse into user object.

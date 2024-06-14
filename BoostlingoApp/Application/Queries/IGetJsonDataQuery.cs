@@ -9,6 +9,10 @@ namespace BoostlingoApp.Application.Queries
 {
     public interface IGetJsonDataQuery
     {
-        Task<List<User>> GetJsonDataQueryAsync();
+        /// <summary>
+        /// Method to fetch all the user for Microsoft api.
+        /// </summary>
+        /// <returns>List of users.</returns>
+        Task<List<User>> Execute();
     }
 }
