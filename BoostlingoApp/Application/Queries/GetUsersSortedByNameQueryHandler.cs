@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using BoostlingoApp.Application.Mappers;
 using BoostlingoApp.Domain.Entities;
 using BoostlingoApp.Domain.Models;
 using BoostlingoApp.Infrastructure.Repository;
@@ -10,26 +9,29 @@ namespace BoostlingoApp.Application.Queries
 {
     public class GetUsersSortedByNameQueryHandler(IUserRepository userRepository, ILogger<GetUsersSortedByNameQueryHandler> logger, IMapper mapper) : IGetUsersSortedByNameQuery
     {
-        public async Task<List<User>> Execute()
+        public async Task<IEnumerable<User>> Execute()
         {
             logger.LogInformation("GetUsersSortedByNameQuery started.");
             try
             {
                 var result = await userRepository.GetAllAsync();
-                var sortedResult = from u in result
-                                   let usernames = u.Name.Split()
-                                   orderby usernames[1], usernames[0]
-                                   select u;
+                var sortedResult = result
+                    .Select(u => new
+                    {
+                        User = u,
+                        Usernames = u.Name.Split()
+                    })
+                    .OrderBy(x => x.Usernames[1])
+                    .ThenBy(x => x.Usernames[0])
+                    .Select(x => mapper.Map<UserEntity, User>(x.User));
 
-                return mapper.Map<List<UserEntity>,List<User>>(sortedResult.ToList());
+                return sortedResult;
            }
             catch (Exception ex)
             {
                 logger.LogError($"Could not fetch user data. Message:{JsonSerializer.Serialize(ex)}");
                 throw new Exception($"Could not fetch user data. Message:{JsonSerializer.Serialize(ex)}");
-
             }
-
         }
     }
 }

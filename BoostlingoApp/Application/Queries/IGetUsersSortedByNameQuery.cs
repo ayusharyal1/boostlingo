@@ -8,6 +8,6 @@ namespace BoostlingoApp.Application.Queries
         /// Method to fetch Users sorted by first and last name.
         /// </summary>
         /// <returns>List of Users.</returns>
-        public Task<List<User>> Execute();
+        public Task<IEnumerable<User>> Execute();
     }
 }

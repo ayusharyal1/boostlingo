@@ -14,6 +14,6 @@ namespace BoostlingoApp.Application.Commands
         /// </summary>
         /// <param name="users">List of users to insert.</param>
         /// <returns>True/False</returns>
-        bool Execute(List<User> users);
+        bool Execute(IEnumerable<User> users);
     }
 }

@@ -8,6 +8,6 @@ namespace BoostlingoApp.Infrastructure.Services
         /// Method to fetch json data and parse into user object.
         /// </summary>
         /// <returns>List of users.</returns>
-        Task<List<User>> GetJsonDataQueryAsync();
+        Task<IEnumerable<User>> GetJsonDataQueryAsync();
     }
 }

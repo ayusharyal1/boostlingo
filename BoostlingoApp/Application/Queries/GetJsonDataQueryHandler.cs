@@ -7,7 +7,7 @@ namespace BoostlingoApp.Application.Queries
 {
     public class GetJsonDataQueryHandler(IJsonDataHttpGateway jsonDataService, ILogger<GetJsonDataQueryHandler> logger) : IGetJsonDataQuery
     {
-        public async Task<List<User>> Execute()
+        public async Task<IEnumerable<User>> Execute()
         {
             try
             {
@@ -18,7 +18,6 @@ namespace BoostlingoApp.Application.Queries
             {
                 logger.LogError($"Could not fetch json data Message:{JsonSerializer.Serialize(ex)}");
                 throw new Exception($"Could not fetch json data Message:{JsonSerializer.Serialize(ex)}");
-
             }
         }
     }

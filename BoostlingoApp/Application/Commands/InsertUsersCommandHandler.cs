@@ -10,12 +10,12 @@ namespace BoostlingoApp.Application.Commands
 {
     public class InsertUsersCommandHandler(IUserRepository repo, ILogger<InsertUsersCommandHandler> logger, IMapper mapper) : IInsertUsersCommand
     {
-        public bool Execute(List<User> users)
+        public bool Execute(IEnumerable<User> users)
         {
             try 
             {
                 logger.LogInformation("Start insert");
-                repo.AddRange(mapper.Map<List<User>,List<UserEntity>>(users));
+                repo.AddRange(mapper.Map<IEnumerable<User>, IEnumerable<UserEntity>>(users));
             }
             catch(Exception ex) 
             {

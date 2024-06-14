@@ -6,8 +6,13 @@ namespace BoostlingoApp.Infrastructure.Services
 {
     public class JsonDataHttpGateway() : IJsonDataHttpGateway
     {
+        // Dependency Injection
         private readonly HttpClient _httpClient = new HttpClient();
-        public async Task<List<User>> GetJsonDataQueryAsync()
+
+        //Newtonsoft Dependency Injection
+        //IOptions Pattern
+
+        public async Task<IEnumerable<User>> GetJsonDataQueryAsync()
         {
             string dataUrl = ConfigurationManager.AppSettings["DataUrl"];
             if (string.IsNullOrEmpty(dataUrl)) throw new Exception("JsonData Url has not been configured.Please check your app.config");
@@ -19,11 +24,11 @@ namespace BoostlingoApp.Infrastructure.Services
                 httpRequestMessage.RequestUri = new Uri(dataUrl);
                 var result = await _httpClient.SendAsync(httpRequestMessage);
                 var jsonString = await result.Content.ReadAsStringAsync();
-                return JsonSerializer.Deserialize<List<User>>(jsonString);
+                return JsonSerializer.Deserialize<IEnumerable<User>>(jsonString);
             }
             catch (Exception ex)
             {
-                throw new Exception($"Exception Occured: Could not read data from url={dataUrl} Message={ex.Message}.");
+                throw;
             }
         }
     }

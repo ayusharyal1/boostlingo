@@ -13,6 +13,6 @@ namespace BoostlingoApp.Application.Queries
         /// Method to fetch all the user for Microsoft api.
         /// </summary>
         /// <returns>List of users.</returns>
-        Task<List<User>> Execute();
+        Task<IEnumerable<User>> Execute();
     }
 }

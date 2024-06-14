@@ -26,11 +26,12 @@ namespace BoostlingoApp.Infrastructure.Repository
 
         public IEnumerable<T> GetAll()
         {
-            return _context.Set<T>().ToList();
+            return _context.Set<T>();
         }
 
         public async Task<IEnumerable<T>> GetAllAsync()
         {
+            // Check This
             return await Task.Run(() => _context.Set<T>());
         }
 
