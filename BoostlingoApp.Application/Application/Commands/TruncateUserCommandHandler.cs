@@ -16,8 +16,8 @@ namespace BoostlingoApp.Application.Commands
             }
             catch (Exception ex)
             {
-                logger.LogError($"Could not truncate table User. Message:{JsonSerializer.Serialize(ex)}");
-                throw new Exception($"Could not truncate table User. Message:{ JsonSerializer.Serialize(ex)}");
+                logger.LogError($"Could not truncate table User. Message:{ex.Message}");
+                throw new Exception($"Could not truncate table User. Message:{ ex.Message}");
             }
         }
     }

@@ -43,7 +43,8 @@ namespace BoostlingoApp.Extensions
                 loggerBuilder.AddFilter("BoostlingoApp", LogLevel.Debug);
                 loggerBuilder.AddConsole();
             })
-            .AddAutoMapper(typeof(AutoMapperProfile).Assembly);
+            .AddAutoMapper(typeof(AutoMapperProfile).Assembly)
+            .AddHttpClient();
 
             return services;
         }

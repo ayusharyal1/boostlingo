@@ -19,8 +19,8 @@ namespace BoostlingoApp.Application.Commands
             }
             catch(Exception ex) 
             {
-                logger.LogError($"Could not insert data to  table User. Message:{JsonSerializer.Serialize(ex)}");
-                throw new Exception($"Could not insert data to table User. Message:{JsonSerializer.Serialize(ex)}");
+                logger.LogError($"Could not insert data to  table User. Message:{ex.Message}");
+                throw new Exception($"Could not insert data to table User. Message:{ex.Message}");
             }
             return true;
         }

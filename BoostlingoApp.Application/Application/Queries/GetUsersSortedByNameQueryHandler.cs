@@ -29,8 +29,8 @@ namespace BoostlingoApp.Application.Queries
            }
             catch (Exception ex)
             {
-                logger.LogError($"Could not fetch user data. Message:{JsonSerializer.Serialize(ex)}");
-                throw new Exception($"Could not fetch user data. Message:{JsonSerializer.Serialize(ex)}");
+                logger.LogError($"Could not fetch user data. Message:{ex.Message}");
+                throw new Exception($"Could not fetch user data. Message:{ex.Message}");
             }
         }
     }

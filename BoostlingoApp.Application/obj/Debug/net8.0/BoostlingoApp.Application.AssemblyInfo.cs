@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BoostlingoApp.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+195b380b9877e8a87f93069fa47ca6c435e851a7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aeeee7d73f3180b0aac284519300d872cfd8a09b")]
 [assembly: System.Reflection.AssemblyProductAttribute("BoostlingoApp.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BoostlingoApp.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
