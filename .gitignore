@@ -5,3 +5,5 @@
 /BoostlingoApp/.vs
 /BoostlingoApp/bin/Debug/net8.0
 /BoostlingoApp/obj
+/BoostlingoApp.UnitTests/bin/Debug/net8.0
+/BoostlingoApp.UnitTests/obj

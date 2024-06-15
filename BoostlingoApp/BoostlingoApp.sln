@@ -10,11 +10,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{14
 		CreateDbScript.sql = CreateDbScript.sql
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoostlingoApp.Application", "..\BoostlingoApp.Application\BoostlingoApp.Application.csproj", "{93B6FA20-1FA1-45BD-9B67-50FA58D82256}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoostlingoApp.Application", "..\BoostlingoApp.Application\BoostlingoApp.Application.csproj", "{93B6FA20-1FA1-45BD-9B67-50FA58D82256}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoostlingoApp.Infrastructure", "..\BoostLingoApp.Infrastructure\BoostlingoApp.Infrastructure.csproj", "{2197E0E0-8E82-418A-B640-68D90C2B53C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoostlingoApp.Infrastructure", "..\BoostLingoApp.Infrastructure\BoostlingoApp.Infrastructure.csproj", "{2197E0E0-8E82-418A-B640-68D90C2B53C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoostlingoApp.Domain", "..\BoostlingoApp.Domain\BoostlingoApp.Domain.csproj", "{8F702ED8-6BBA-4A51-A860-A3D333854B96}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoostlingoApp.Domain", "..\BoostlingoApp.Domain\BoostlingoApp.Domain.csproj", "{8F702ED8-6BBA-4A51-A860-A3D333854B96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoostlingoApp.UnitTests", "..\BoostlingoApp.UnitTests\BoostlingoApp.UnitTests.csproj", "{94C4F8B4-6F07-46D1-A407-EAB50D95FC3D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +40,10 @@ Global
 		{8F702ED8-6BBA-4A51-A860-A3D333854B96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F702ED8-6BBA-4A51-A860-A3D333854B96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F702ED8-6BBA-4A51-A860-A3D333854B96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94C4F8B4-6F07-46D1-A407-EAB50D95FC3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94C4F8B4-6F07-46D1-A407-EAB50D95FC3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94C4F8B4-6F07-46D1-A407-EAB50D95FC3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94C4F8B4-6F07-46D1-A407-EAB50D95FC3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
