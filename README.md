@@ -1,7 +1,7 @@
 # boostlingo
 BoostLingoApp
 - .Net8 Console Application.
-- Please change app.config according to your environment.
+- Please change appsettings.json according to your environment.
 
 Database:
 SQL Server Express 2022
