@@ -1,13 +1,16 @@
 USE [master]
 GO
 /****** Object:  Database [boostlingo-db]    Script Date: 6/14/2024 1:04:30 PM ******/
-CREATE DATABASE [boostlingo-db]
- CONTAINMENT = NONE
- ON  PRIMARY 
-( NAME = N'boostlingo-db', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL16.SQLEXPRESS\MSSQL\DATA\boostlingo-db.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
- LOG ON 
-( NAME = N'boostlingo-db_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL16.SQLEXPRESS\MSSQL\DATA\boostlingo-db_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
- WITH CATALOG_COLLATION = DATABASE_DEFAULT, LEDGER = OFF
+IF NOT EXISTS (SELECT name FROM master.sys.databases WHERE name = N'boostlingo-db')
+BEGIN 
+	CREATE DATABASE [boostlingo-db]
+	 CONTAINMENT = NONE
+	 ON  PRIMARY 
+	( NAME = N'boostlingo-db', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL16.SQLEXPRESS\MSSQL\DATA\boostlingo-db.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+	 LOG ON 
+	( NAME = N'boostlingo-db_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL16.SQLEXPRESS\MSSQL\DATA\boostlingo-db_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+	 WITH CATALOG_COLLATION = DATABASE_DEFAULT, LEDGER = OFF
+END
 GO
 ALTER DATABASE [boostlingo-db] SET COMPATIBILITY_LEVEL = 160
 GO
@@ -87,17 +90,20 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[User](
-	[id] [varchar](50) NOT NULL,
-	[name] [varchar](200) NOT NULL,
-	[language] [varchar](50) NOT NULL,
-	[bio] [varchar](max) NULL,
-	[version] [decimal](18, 2) NULL,
- CONSTRAINT [PK_User] PRIMARY KEY CLUSTERED 
-(
-	[id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+IF OBJECT_ID(N'dbo.[User]', N'U') IS NULL
+BEGIN 
+	CREATE TABLE [dbo].[User](
+		[id] [varchar](50) NOT NULL,
+		[name] [varchar](200) NOT NULL,
+		[language] [varchar](50) NOT NULL,
+		[bio] [varchar](max) NULL,
+		[version] [decimal](18, 2) NULL,
+	 CONSTRAINT [PK_User] PRIMARY KEY CLUSTERED 
+	(
+		[id] ASC
+	)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+	) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+END
 GO
 USE [master]
 GO
