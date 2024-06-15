@@ -9,7 +9,7 @@ namespace BoostlingoApp.Infrastructure.Services
         public async Task<IEnumerable<User>> GetJsonDataQueryAsync()
         {
             string dataUrl = config.GetSection("DataUrl").Value;
-            if (string.IsNullOrEmpty(dataUrl)) throw new Exception("JsonData Url has not been configured.Please check your app.config");
+            if (string.IsNullOrEmpty(dataUrl)) throw new Exception("DataUrl has not been configured.Please check your app.config");
 
             try
             {
