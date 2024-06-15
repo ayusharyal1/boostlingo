@@ -4,6 +4,7 @@ using BoostlingoApp.Application.Queries;
 using BoostlingoApp.Infrastructure.Repository;
 using BoostlingoApp.Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
@@ -19,15 +20,23 @@ namespace BoostlingoApp.Extensions
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services) 
         {
-            // Read Configuration for DB
-            string connectionString = ConfigurationManager.AppSettings["ConnectionString"];
-            if (string.IsNullOrEmpty(connectionString))
-            {
-                throw new Exception("Connection String not configured. Please Check app.config.");
-            }
+            //var configBuilder = new ConfigurationBuilder().AddJsonFile("appsettings.json", false,false) ;
+            //var config = configBuilder.Build();
 
-            services.AddDbContext<BoostlingoDBContext>(
-                  options => options.UseSqlServer(connectionString))
+            //string connectionString = config["ConnectionString"];
+            //if (string.IsNullOrEmpty(connectionString))
+            //{
+            //    throw new Exception("Connection String not configured. Please Check appsettings.json");
+            //}
+
+            services
+            .AddTransient<IConfiguration>(sp =>
+                {
+                    IConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
+                    configurationBuilder.AddJsonFile("appsettings.json");
+                    return configurationBuilder.Build();
+                })
+            .AddDbContext<BoostlingoDBContext>()
             .AddScoped<IGetJsonDataQuery, GetJsonDataQueryHandler>()
             .AddScoped<IJsonDataHttpGateway, JsonDataHttpGateway>()
             .AddScoped<IInsertUsersCommand, InsertUsersCommandHandler>()
@@ -44,7 +53,8 @@ namespace BoostlingoApp.Extensions
                 loggerBuilder.AddConsole();
             })
             .AddAutoMapper(typeof(AutoMapperProfile).Assembly)
-            .AddHttpClient();
+            .AddHttpClient()
+            ;
 
             return services;
         }
