@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoostlingoApp", "BoostlingoApp.csproj", "{E1E42C0B-EFDD-4362-B183-C1FF50B5F76D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{14BB4E95-DB46-4816-BAA4-B447246F0725}"
+	ProjectSection(SolutionItems) = preProject
+		CreateDbScript.sql = CreateDbScript.sql
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoostlingoApp.Application", "..\BoostlingoApp.Application\BoostlingoApp.Application.csproj", "{93B6FA20-1FA1-45BD-9B67-50FA58D82256}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoostlingoApp.Infrastructure", "..\BoostLingoApp.Infrastructure\BoostlingoApp.Infrastructure.csproj", "{2197E0E0-8E82-418A-B640-68D90C2B53C4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoostlingoApp.Domain", "..\BoostlingoApp.Domain\BoostlingoApp.Domain.csproj", "{8F702ED8-6BBA-4A51-A860-A3D333854B96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoostlingoApp.UnitTests", "..\BoostlingoApp.UnitTests\BoostlingoApp.UnitTests.csproj", "{94C4F8B4-6F07-46D1-A407-EAB50D95FC3D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E1E42C0B-EFDD-4362-B183-C1FF50B5F76D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1E42C0B-EFDD-4362-B183-C1FF50B5F76D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1E42C0B-EFDD-4362-B183-C1FF50B5F76D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1E42C0B-EFDD-4362-B183-C1FF50B5F76D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93B6FA20-1FA1-45BD-9B67-50FA58D82256}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93B6FA20-1FA1-45BD-9B67-50FA58D82256}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93B6FA20-1FA1-45BD-9B67-50FA58D82256}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93B6FA20-1FA1-45BD-9B67-50FA58D82256}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2197E0E0-8E82-418A-B640-68D90C2B53C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2197E0E0-8E82-418A-B640-68D90C2B53C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2197E0E0-8E82-418A-B640-68D90C2B53C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2197E0E0-8E82-418A-B640-68D90C2B53C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F702ED8-6BBA-4A51-A860-A3D333854B96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F702ED8-6BBA-4A51-A860-A3D333854B96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F702ED8-6BBA-4A51-A860-A3D333854B96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F702ED8-6BBA-4A51-A860-A3D333854B96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94C4F8B4-6F07-46D1-A407-EAB50D95FC3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94C4F8B4-6F07-46D1-A407-EAB50D95FC3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94C4F8B4-6F07-46D1-A407-EAB50D95FC3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94C4F8B4-6F07-46D1-A407-EAB50D95FC3D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FCA95F9F-D0BB-4010-A025-AA6DBEFA7B2C}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,15 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/BoostlingoApp/.vs
+/BoostlingoApp/bin/Debug/net8.0
+/BoostlingoApp/obj
+/BoostlingoApp.UnitTests/bin/Debug/net8.0
+/BoostlingoApp.UnitTests/obj
+/BoostlingoApp.Domain/obj/
+/BoostlingoApp.Infrastructure/obj/
+/BoostlingoApp.Application/obj/
+/BoostlingoApp.Domain/bin/
+/BoostlingoApp.Infrastructure/bin/
+/BoostlingoApp.Application/bin/
