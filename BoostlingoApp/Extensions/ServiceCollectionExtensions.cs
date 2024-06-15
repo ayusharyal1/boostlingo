@@ -20,15 +20,6 @@ namespace BoostlingoApp.Extensions
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services) 
         {
-            //var configBuilder = new ConfigurationBuilder().AddJsonFile("appsettings.json", false,false) ;
-            //var config = configBuilder.Build();
-
-            //string connectionString = config["ConnectionString"];
-            //if (string.IsNullOrEmpty(connectionString))
-            //{
-            //    throw new Exception("Connection String not configured. Please Check appsettings.json");
-            //}
-
             services
             .AddTransient<IConfiguration>(sp =>
                 {
@@ -53,8 +44,7 @@ namespace BoostlingoApp.Extensions
                 loggerBuilder.AddConsole();
             })
             .AddAutoMapper(typeof(AutoMapperProfile).Assembly)
-            .AddHttpClient()
-            ;
+            .AddHttpClient();
 
             return services;
         }

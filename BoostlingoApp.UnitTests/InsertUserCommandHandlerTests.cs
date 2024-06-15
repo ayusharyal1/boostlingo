@@ -44,8 +44,6 @@ namespace BoostlingoApp.UnitTests
             var sut = new InsertUsersCommandHandler(userRepoMock.Object, loggerMock.Object, mapperMock.Object);
 
             var result = sut.Execute(new List<User>());
-
         }
-
     }
 }

@@ -3,7 +3,6 @@ using BoostlingoApp.Domain.Entities;
 using BoostlingoApp.Domain.Models;
 using BoostlingoApp.Infrastructure.Repository;
 using Microsoft.Extensions.Logging;
-using System.Text.Json;
 
 namespace BoostlingoApp.Application.Queries
 {
